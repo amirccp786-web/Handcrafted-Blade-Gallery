@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>The Forge Chronicles | THE APPAREL HUB Blog</title>
+    <meta name="description" content="Explore the Artisan Chronicles from THE APPAREL HUB. Read expert guides on custom chef knives, Damascus steel care, survival gear, and bladesmithing heritage.">
+    <meta name="keywords" content="handmade knives, Damascus steel, bladesmithing, custom knives guide, Wazirabad forge, professional cutlery, kitchen essentials, THE APPAREL HUB blog">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@500;600;700&amp;family=Manrope:wght@400;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #121414;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333535;
+        }
+
+        .workshop-overlay {
+            background: rgba(18, 20, 20, 0.98);
+            backdrop-filter: blur(20px);
+        }
+        
+        .blog-card:hover .blog-image {
+            transform: scale(1.05);
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#ffb2ba",
+                        "surface-container": "#1e2020",
+                        "surface-container-low": "#1a1c1c",
+                        "surface-container-high": "#282a2b",
+                        "background": "#121414",
+                        "on-surface": "#e2e2e2",
+                        "on-surface-variant": "#dcc0c2",
+                        "outline-variant": "#564243",
+                        "primary-container": "#e76d80",
+                        "on-primary-container": "#5f011e"
+                    },
+                    "spacing": { "margin-edge": "64px", "section-gap": "128px", "gutter": "32px", "container-max": "1440px" },
+                    "fontFamily": { "headline": ["Noto Serif"], "body": ["Manrope"] }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-background text-on-surface font-body overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-primary z-[70] transition-all duration-100" style="width: 0%"></div>
+
+    <!-- Navigation Bar -->
+    <header class="bg-background/90 backdrop-blur-md w-full top-0 sticky border-b border-outline-variant/30 z-50">
+        <div class="flex justify-between items-center w-full px-margin-edge py-6 max-w-container-max mx-auto">
+            <div class="font-headline text-2xl font-semibold tracking-widest uppercase cursor-pointer" onclick="window.location.href='index.html'">
+                THE APPAREL HUB
+            </div>
+            <nav class="hidden md:flex gap-12 items-center">
+                <a class="text-on-surface-variant text-xs tracking-widest font-semibold uppercase hover:text-primary transition-all duration-300"
+                    href="index.html">Collection</a>
+                <a class="text-on-surface-variant text-xs tracking-widest font-semibold uppercase hover:text-primary transition-all duration-300"
+                    href="gallery.html">Gallery</a>
+                <a class="text-on-surface-variant text-xs tracking-widest font-semibold uppercase hover:text-primary transition-all duration-300"
+                    href="about.html">About</a>
+                <a class="text-on-surface-variant text-xs tracking-widest font-semibold uppercase hover:text-primary transition-all duration-300"
+                    href="contact.html">Contact</a>
+                <a class="text-primary border-b border-primary pb-1 text-xs tracking-widest font-semibold uppercase hover:text-primary transition-all duration-300"
+                    href="blog.html">Blog</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Blog Home -->
+    <main class="pt-20 pb-32 px-4 md:px-margin-edge">
+        <div class="max-w-6xl mx-auto">
+            
+            <!-- Page Title -->
+            <div class="my-16 text-center">
+                <h2 class="font-headline text-5xl md:text-7xl mb-6">Artisan Chronicles</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-xl text-on-surface-variant italic">The heritage, science, and hands behind the steel.</p>
+            </div>
+
+            <!-- Artisan Profile Section -->
+            <section id="artisan-profile"
+                class="mb-20 bg-surface-container-low border border-outline-variant p-8 md:p-12 overflow-hidden relative rounded-lg max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                    <div class="md:col-span-4 lg:col-span-3">
+                        <div class="aspect-square bg-background border border-outline-variant p-2 overflow-hidden rounded">
+                            <img id="display-profile-pic" class="w-full h-full object-cover grayscale rounded" src="" />
+                        </div>
+                    </div>
+                    <div class="md:col-span-8 lg:col-span-9 space-y-6">
+                        <div
+                            class="flex items-center gap-4 text-[10px] tracking-[0.3em] text-primary uppercase font-bold">
+                            <span class="material-symbols-outlined text-sm">verified</span>
+                            Master Bladesmith
+                        </div>
+                        <p id="display-profile-bio"
+                            class="text-xl md:text-2xl font-headline leading-relaxed text-on-surface italic"></p>
+                        <div class="flex flex-wrap gap-8 pt-6 border-t border-outline-variant">
+                            <div class="flex flex-col gap-1">
+                                <span
+                                    class="text-[10px] text-primary uppercase font-bold tracking-widest">Location</span>
+                                <span id="display-profile-location" class="text-sm"></span>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <span
+                                    class="text-[10px] text-primary uppercase font-bold tracking-widest">Experience</span>
+                                <span id="display-profile-years" class="text-sm"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Post Section -->
+            <section class="mb-24">
+                <h3 class="font-headline text-xs tracking-[0.3em] text-primary uppercase font-bold mb-8 text-center md:text-left flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">star</span>
+                    Featured Publication
+                </h3>
+                <div class="grid grid-cols-1 lg:grid-cols-12 bg-surface-container border border-outline-variant rounded-lg overflow-hidden group">
+                    <div class="lg:col-span-7 aspect-[16/9] lg:aspect-auto overflow-hidden relative min-h-[300px]">
+                        <img class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" 
+                             src="../Public/Tracker.png" 
+                             alt="Bespoke Damascus Tracker">
+                        <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent lg:hidden"></div>
+                    </div>
+                    <div class="lg:col-span-5 p-8 md:p-12 flex flex-col justify-center space-y-6">
+                        <div class="flex items-center gap-3">
+                            <span class="text-[10px] font-bold tracking-[0.2em] text-primary uppercase bg-primary/10 border border-primary/20 px-3 py-1 rounded">Collector's Guide</span>
+                            <span class="text-xs text-on-surface-variant/80">• May 18, 2026</span>
+                        </div>
+                        <h4 class="font-headline text-2xl md:text-3xl text-on-surface font-bold leading-tight tracking-tight">
+                            Ultimate Buying Guide for Handmade Knives
+                        </h4>
+                        <p class="text-on-surface-variant text-sm font-light leading-relaxed">
+                            Welcome to the world of handmade knives, where art meets function. Learn everything you need to know about premium Damascus steel, handle geometries, maintenance, and working with custom knife makers.
+                        </p>
+                        <div class="flex items-center justify-between pt-6 border-t border-outline-variant/30">
+                            <div class="flex items-center gap-3">
+                                <img class="w-8 h-8 rounded-full grayscale border border-outline-variant/40" 
+                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhSnP1rht6Fb6uxhZns_2peqvjuhry7dogUMFZXtsqr5BLmPJ76Bqb6qLCkkw960SAPS-t0-k2fkheV5V6QlaewJzzDobXGAtAeRrzL2_OAnvieoxSuOuns6ndy0X3OrZ5j4uKRmgDNip_LbWh-WAWDJZOhR-eyd4XVqwhsNgI2U9EBCct4igrKYk8yMy52vtdl9Xwul8HP_4TloCvG9giqmGUzfGqMuC1MFjcDUepAmum8Gg6IyqHqjeEbWHkRwkxhTlTqn-OCf4" 
+                                     alt="Master Usman">
+                                <span class="text-xs font-bold text-on-surface tracking-wide">Master Usman</span>
+                            </div>
+                            <a href="blog-buying-guide.html" class="inline-flex items-center gap-2 text-primary hover:text-primary-container text-xs font-bold uppercase tracking-widest transition-all duration-300">
+                                Read Guide
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chronicles Grid Feed -->
+            <section>
+                <h3 class="font-headline text-xs tracking-[0.3em] text-primary uppercase font-bold mb-8 text-center md:text-left flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">grid_view</span>
+                    All Publications
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Post Card 1 -->
+                    <div class="bg-surface-container-low border border-outline-variant/30 rounded-lg overflow-hidden group flex flex-col justify-between hover:border-outline-variant transition-all duration-500">
+                        <div>
+                            <div class="aspect-[16/10] overflow-hidden relative border-b border-outline-variant/20">
+                                <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" 
+                                     src="../Public/Damascus-1.png" 
+                                     alt="Top Handmade Chef Knives">
+                            </div>
+                            <div class="p-8 space-y-4">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-[9px] font-bold tracking-[0.2em] text-primary uppercase bg-primary/10 border border-primary/20 px-2 py-0.5 rounded">Chef's Corner</span>
+                                    <span class="text-[10px] text-on-surface-variant/80">May 18, 2026</span>
+                                </div>
+                                <h4 class="font-headline text-xl text-on-surface font-bold group-hover:text-primary transition-colors duration-300">
+                                    Top Handmade Knives Every Chef Should Own
+                                </h4>
+                                <p class="text-on-surface-variant text-sm font-light leading-relaxed line-clamp-3">
+                                    As a chef, you know how important the right tools are. Discover the essential custom knives for professional kitchens, the structure of Damascus steel, and the difference between Pakistani and Western forge shapes.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-8 pb-8 pt-4 flex items-center justify-between border-t border-outline-variant/20">
+                            <span class="text-xs text-on-surface-variant/70">12 Min Read</span>
+                            <a href="blog-chef-knives-guide.html" class="inline-flex items-center gap-2 text-primary hover:text-primary-container text-xs font-bold uppercase tracking-widest transition-all duration-300">
+                                Read Article
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Post Card 2 -->
+                    <div class="bg-surface-container-low border border-outline-variant/30 rounded-lg overflow-hidden group flex flex-col justify-between hover:border-outline-variant transition-all duration-500">
+                        <div>
+                            <div class="aspect-[16/10] overflow-hidden relative border-b border-outline-variant/20">
+                                <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" 
+                                     src="../Public/Tracker.png" 
+                                     alt="Bespoke Damascus Tracker">
+                            </div>
+                            <div class="p-8 space-y-4">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-[9px] font-bold tracking-[0.2em] text-primary uppercase bg-primary/10 border border-primary/20 px-2 py-0.5 rounded">Collector's Guide</span>
+                                    <span class="text-[10px] text-on-surface-variant/80">May 18, 2026</span>
+                                </div>
+                                <h4 class="font-headline text-xl text-on-surface font-bold group-hover:text-primary transition-colors duration-300">
+                                    Ultimate Buying Guide for Handmade Knives
+                                </h4>
+                                <p class="text-on-surface-variant text-sm font-light leading-relaxed line-clamp-3">
+                                    A comprehensive manual on choosing, buying, and maintaining custom handcrafted blades. Learn how to work with custom makers, assess fair pricing ranges, and avoid legal compliance mistakes.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="px-8 pb-8 pt-4 flex items-center justify-between border-t border-outline-variant/20">
+                            <span class="text-xs text-on-surface-variant/70">15 Min Read</span>
+                            <a href="blog-buying-guide.html" class="inline-flex items-center gap-2 text-primary hover:text-primary-container text-xs font-bold uppercase tracking-widest transition-all duration-300">
+                                Read Article
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest border-t border-outline-variant w-full mt-24">
+        <div class="flex flex-col md:flex-row justify-between items-start gap-gutter px-margin-edge py-section-gap w-full max-w-container-max mx-auto">
+            <div class="mb-8 md:mb-0">
+                <div class="font-headline text-2xl text-on-surface mb-4 uppercase tracking-widest">THE APPAREL HUB</div>
+                <p class="font-label-caps text-[10px] text-on-surface-variant mb-4 uppercase tracking-[0.2em]">© 2024 THE APPAREL HUB. HAND-FORGED IN PAKISTAN.</p>
+                <div class="flex items-center gap-2 text-primary font-label-caps text-[10px] tracking-widest border border-primary/30 w-fit px-3 py-1 rounded">
+                    <span class="material-symbols-outlined text-sm">local_shipping</span>
+                    SHIPS FAST FROM HOUSTON, TEXAS
+                </div>
+            </div>
+            <nav class="flex flex-col gap-4">
+                <a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="index.html">Collection</a>
+                <a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="gallery.html">Gallery</a>
+                <a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="about.html">About</a>
+                <a class="font-body text-sm text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="contact.html">Contact</a>
+                <a class="font-body text-sm text-primary transition-colors uppercase tracking-widest" href="blog.html">Blog</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        const PROFILE_KEY = 'pakistan_forge_profile_v2';
+
+        let profile = JSON.parse(localStorage.getItem(PROFILE_KEY)) || {
+            pic: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAhSnP1rht6Fb6uxhZns_2peqvjuhry7dogUMFZXtsqr5BLmPJ76Bqb6qLCkkw960SAPS-t0-k2fkheV5V6QlaewJzzDobXGAtAeRrzL2_OAnvieoxSuOuns6ndy0X3OrZ5j4uKRmgDNip_LbWh-WAWDJZOhR-eyd4XVqwhsNgI2U9EBCct4igrKYk8yMy52vtdl9Xwul8HP_4TloCvG9giqmGUzfGqMuC1MFjcDUepAmum8Gg6IyqHqjeEbWHkRwkxhTlTqn-OCf4',
+            bio: 'Master Usman is a third-generation bladesmith based in Wazirabad, Pakistan. Specializing in high-performance Damascus steel and traditional forge-welding, he preserves the ancient subcontinental secrets of legendary cutlery.',
+            location: 'Wazirabad, Punjab, Pakistan',
+            years: '38 Years Mastery'
+        };
+
+        function renderProfile() {
+            document.getElementById('display-profile-pic').src = profile.pic;
+            document.getElementById('display-profile-bio').innerText = profile.bio;
+            document.getElementById('display-profile-location').innerText = profile.location;
+            document.getElementById('display-profile-years').innerText = profile.years;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProfile();
+        });
+
+        // Scroll Progress Indicator
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scroll-progress').style.width = scrolled + '%';
+        });
+    </script>
+</body>
+
+</html>
