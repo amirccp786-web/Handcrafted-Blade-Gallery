@@ -157,7 +157,7 @@
         <main class="flex-grow w-full max-w-container-max mx-auto px-margin-edge py-section-gap">
                 <!-- Hero Section -->
                 <header class="mb-section-gap max-w-4xl">
-                        <h1 class="font-headline-xl text-headline-xl text-on-surface mb-6">Forge a Connection.</h1>
+                        <h1 class="font-headline-xl text-headline-xl text-on-surface mb-6">Forge a Connection</h1>
                         <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
                                 Whether you seek a bespoke commission, require maintenance for an existing blade, or
                                 simply wish to discuss the finer points of metallurgy, our workshop doors are open to
@@ -342,7 +342,7 @@
                         function showToast(message, type = 'info') {
                                 const icon = notification.querySelector('.material-symbols-outlined');
                                 const text = notification.querySelector('.text-sm');
-                                
+
                                 text.innerText = message;
                                 if (type === 'success') {
                                         icon.innerText = 'check_circle';
@@ -357,7 +357,7 @@
 
                                 // Slide in & fade in
                                 notification.classList.remove('translate-y-12', 'opacity-0', 'pointer-events-none');
-                                
+
                                 setTimeout(() => {
                                         notification.classList.add('translate-y-12', 'opacity-0', 'pointer-events-none');
                                 }, 5000);
@@ -365,7 +365,7 @@
 
                         form.addEventListener('submit', async (e) => {
                                 e.preventDefault();
-                                
+
                                 const templateParams = {
                                         firstName: document.getElementById('firstName').value,
                                         lastName: document.getElementById('lastName').value,
